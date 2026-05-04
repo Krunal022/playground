@@ -9,6 +9,12 @@
 
 <body style="padding: 1.5rem;">
     <h1>HelloWorld!</h1>
+    <h6><em>
+            "This is just a demo of various HTML tags. It includes headings, paragraphs, lists, tables, multimedia
+            elements, and more. Feel free to explore and modify the code to see how different tags work!"
+        </em></h6>
+
+
     <p>Lorem <b>ipsum</b> <i>dolor</i> sit amet <em>consectetur</em>. Lorem ipsum dolor sit amet, <mark>consectetur
             adipisicing elit.</mark> Est, impedit. Reprehenderit<strong> illo ab similique molestias id
         </strong><del>sequi assumenda</del> est! <u>Temporibus soluta</u> cum deleniti officia,<small> 'maiores
@@ -80,6 +86,59 @@
         </article>
         <footer>Footer here!</footer>
     </main>
+
+    <fieldset>
+        <legend>
+            Form Here!
+        </legend>
+        <form>
+            <label for="name">Name:</label>
+            <input id="name" type="text" placeholder="Enter your name..">
+            <br>
+            <label for="email">Email:</label>
+            <input id="email" type="text" placeholder="Enter your Email..">
+            <br>
+            <label for="mob">Mobile No:</label>
+            <input id="mob" type="number" placeholder="Enter your number..">
+            <br>
+            <label for="pass">Password:</label>
+            <input id="pass" type="password" placeholder="Enter your Password..">
+            <br>
+            <label for="desc">Description:</label>
+            <textarea id="desc" placeholder="Write something here!"></textarea>
+            <br>
+            <label for="dropdown">simpleDropdown:</label>
+            <select id="dropdown">
+                <option value="html">HTML</option>
+                <option value="css">CSS</option>
+                <option value="js">JS</option>
+            </select>
+            <br>
+            <label for="groupDropdown">groupedDropdown</label>
+            <select name="" id="groupDropdown">
+                <optgroup label="Frontend">
+                    <option value="html">HTML</option>
+                    <option value="css">CSS</option>
+                    <option value="js">JS</option>
+                </optgroup>
+                <optgroup label="Backend">
+                    <option value="node">NodeJS</option>
+                    <option value="php">PHP</option>
+                    <option value="python">Python</option>
+            </select>
+            <br>
+            <label for="date">Date:</label>
+            <input id="date" type="date">
+            <br>
+            <label for="color">Color:</label>
+            <input id="color" type="color">
+            <br>
+            <label for="file">File:</label>
+            <input id="file" type="file">
+            <br>
+            <button type="submit">Submit</button>
+        </form>
+    </fieldset>
 
 </body>
 
