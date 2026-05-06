@@ -1,36 +1,66 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+
+    <!-- meta tag for responsive design, ensures the page scales correctly on different devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- meta tag for SEO, providing a description of the webpage content for search engines and social media previews.  -->
+    <meta name="description"
+        content="This is a demo webpage showcasing various HTML tags and their usage. It includes headings, paragraphs, lists, tables, multimedia elements, and more. Explore the code to learn how different HTML tags work!" />
+
+
+    <!-- title of the webpage that appears in the browser tab -->
     <title>HTML THINGS!</title>
 </head>
 
-<body style="padding: 1.5rem;">
+<body style="padding: 1.5rem">
+    <!-- h1 is the largest heading tag, used for main titles -->
     <h1>HelloWorld!</h1>
-    <h6><em>
-            "This is just a demo of various HTML tags. It includes headings, paragraphs, lists, tables, multimedia
-            elements, and more. Feel free to explore and modify the code to see how different tags work!"
-        </em></h6>
+    <h6>
+        <em>
+            "This is just a demo of various HTML tags. It includes headings,
+            paragraphs, lists, tables, multimedia elements, and more. Feel free to
+            explore and modify the code to see how different tags work!"
+        </em>
+    </h6>
 
+    <!-- p tag is used for paragraphs of text, and it can contain various inline elements like <b>, <i>, <em>, etc. -->
+    <p>
+        Lorem <b>ipsum</b> <i>dolor</i> sit amet <em>consectetur</em>. Lorem ipsum
+        dolor sit amet, <mark>consectetur adipisicing elit.</mark> Est, impedit.
+        Reprehenderit<strong> illo ab similique molestias id </strong><del>sequi assumenda</del> est! <u>Temporibus
+            soluta</u> cum deleniti
+        officia,<small> 'maiores repellat'</small> saepe
+        <ins>explicabo neque</ins> rerum.
+    </p>
+    <h4>
+        H<sub><small>2</small></sub>O
+    </h4>
+    <h4>
+        X<sup><small>2</small></sup>
+    </h4>
 
-    <p>Lorem <b>ipsum</b> <i>dolor</i> sit amet <em>consectetur</em>. Lorem ipsum dolor sit amet, <mark>consectetur
-            adipisicing elit.</mark> Est, impedit. Reprehenderit<strong> illo ab similique molestias id
-        </strong><del>sequi assumenda</del> est! <u>Temporibus soluta</u> cum deleniti officia,<small> 'maiores
-            repellat'</small> saepe <ins>explicabo neque</ins> rerum.</p>
-    <h4>H<sub><small>2</small></sub>O</h4>
-    <h4>X<sup><small>2</small></sup></h4>
+    <!-- a tag is used for hyperlinks, allowing users to click and navigate to other pages or resources -->
     <a href="https://krunal-this-side.vercel.app/">Click Me Please</a>
-    <br><br>
-    <hr>
 
+    <!-- br tag is a line break, used to create a new line without starting a new paragraph. 
+     hr tag creates a horizontal line, often used to separate content sections. -->
+    <br /><br />
+    <hr />
+
+    <!-- img tag is used to embed images, 
+        audio tag for audio files,
+        video tag for videos, and iframe for embedding other
+        web pages or content like YouTube videos. -->
     <img src="https://avatars.githubusercontent.com/u/140624400?s=200&u=39684c7f2880271d8545fb49698da21c35ee6039&v=4"
-        alt="">
+        alt="" />
     <audio src="https://www.myinstants.com/media/sounds/fahhhhhhhhhhhhhh.mp3" controls></audio>
-    <video src="https://www.pexels.com/download/video/13768610/" autoplay loop muted style="width: 30vw;"></video>
+    <video src="https://www.pexels.com/download/video/13768610/" autoplay loop muted style="width: 30vw"></video>
     <iframe src="https://youtube.be/embed/CgnBeZQELk0?si=eqp_mvU5fUguQ9Re" frameborder="0"></iframe>
 
+    <!-- ul tag is for unordered lists (bulleted), and ol tag is for ordered lists (numbered).  -->
     <ul>
         <li>List Item 1</li>
         <li>List Item 2</li>
@@ -42,6 +72,7 @@
         <li>List Item 3</li>
     </ol>
 
+    <!-- table tag is used to create tables, with tr for table rows, th for table headers, and td for table data cells.  -->
     <table border="2">
         <tr>
             <th>Name</th>
@@ -59,61 +90,63 @@
             <td>Mumbai</td>
         </tr>
     </table>
-    <hr>
+    <hr />
 
+    <!-- semantic tags like main, header, section, aside, article, and footer help structure the content in a meaningful way, improving accessibility and SEO. -->
     <main>
         <header>i'm header babe!</header>
         <section>
-            sectionOne - Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, veritatis.
+            sectionOne - Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Rerum, veritatis.
         </section>
-        <br>
+        <br />
         <section>
-            sectionTwo - Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, consequatur.
+            sectionTwo - Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Commodi, consequatur.
         </section>
         <code>
-            <mark>
-                console.log('Hello World!');
-                const sum = (a, b) => a + b;
-            </mark>
-        </code>
-        <br>
+        <mark> console.log('Hello World!'); const sum = (a, b) => a + b; </mark>
+      </code>
+        <br />
         <aside>
-            aside - Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, veritatis.
+            aside - Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum,
+            veritatis.
         </aside>
-        <br>
+        <br />
         <article>
-            article - Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, consequatur.
+            article - Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Commodi, consequatur.
         </article>
         <footer>Footer here!</footer>
     </main>
 
+    <!-- fieldset tag is used to group related elements in a form, and legend provides a caption for the fieldset.  -->
     <fieldset>
-        <legend>
-            Form Here!
-        </legend>
+        <legend>Form Here!</legend>
         <form>
+            <!-- label tag is used to define labels for form elements, and input is used for various types of user input like text, number, password, etc. -->
             <label for="name">Name:</label>
-            <input id="name" type="text" placeholder="Enter your name..">
-            <br>
+            <input id="name" type="text" placeholder="Enter your name.." />
+            <br />
             <label for="email">Email:</label>
-            <input id="email" type="text" placeholder="Enter your Email..">
-            <br>
+            <input id="email" type="text" placeholder="Enter your Email.." />
+            <br />
             <label for="mob">Mobile No:</label>
-            <input id="mob" type="number" placeholder="Enter your number..">
-            <br>
+            <input id="mob" type="number" placeholder="Enter your number.." />
+            <br />
             <label for="pass">Password:</label>
-            <input id="pass" type="password" placeholder="Enter your Password..">
-            <br>
+            <input id="pass" type="password" placeholder="Enter your Password.." />
+            <br />
             <label for="desc">Description:</label>
             <textarea id="desc" placeholder="Write something here!"></textarea>
-            <br>
+            <br />
             <label for="dropdown">simpleDropdown:</label>
             <select id="dropdown">
                 <option value="html">HTML</option>
                 <option value="css">CSS</option>
                 <option value="js">JS</option>
             </select>
-            <br>
+            <br />
             <label for="groupDropdown">groupedDropdown</label>
             <select name="" id="groupDropdown">
                 <optgroup label="Frontend">
@@ -125,17 +158,18 @@
                     <option value="node">NodeJS</option>
                     <option value="php">PHP</option>
                     <option value="python">Python</option>
+                </optgroup>
             </select>
-            <br>
+            <br />
             <label for="date">Date:</label>
-            <input id="date" type="date">
-            <br>
+            <input id="date" type="date" />
+            <br />
             <label for="color">Color:</label>
-            <input id="color" type="color">
-            <br>
+            <input id="color" type="color" />
+            <br />
             <label for="file">File:</label>
-            <input id="file" type="file">
-            <br>
+            <input id="file" type="file" />
+            <br />
             <button type="submit">Submit</button>
         </form>
     </fieldset>
