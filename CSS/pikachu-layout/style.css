@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    overflow: hidden;
+    border-radius: 4rem;
+}
+
+main .left {
+    height: 100%;
+    width: 60%;
+    background-color: #FBC50B;
+}
+
+.left .logo {
+    height: fit-content;
+    width: 20%;
+}
+
+.left .logo img {
+    height: 100%;
+    width: 100%;
+}
+
+.left .text-content {
+    padding: 1rem 3rem;
+}
+
+.left .text-content h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 5px;
+}
+
+.text-content h1 {
+    font-size: 9rem;
+    font-weight: 700;
+}
+
+.text-content p {
+    width: 50%;
+    letter-spacing: 2px;
+}
+
+.text-content h3 {
+    opacity: .8;
+    font-weight: 600;
+    margin-top: 1.5rem;
+}
+
+.bottom-img {
+    opacity: .3;
+    padding-left: 5rem;
+}
+
+main .right {
+    height: 100%;
+    width: 40%;
+    background-color: #FAE7B2;
+}
+
+.ham-burger {
+    width: 100%;
+    height: 20%;
+    /* background-color: red; */
+    padding: 1rem 2rem;
+    justify-content: end;
+    align-items: center;
+    display: flex;
+}
+
+.ham-burger i {
+    font-size: 5rem;
+    opacity: .88;
+}
+
+.center-img {
+    position: absolute;
+    scale: 1.33;
+    left: 46%;
+    top: 15%;
+}
