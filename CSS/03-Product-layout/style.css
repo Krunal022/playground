@@ -2,10 +2,156 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 html,
 body {
   height: 100%;
   width: 100%;
+}
+html main,
+body main {
+  height: 100%;
+  width: 100%;
+  background-color: #f9f5f2;
+}
+html main nav,
+body main nav {
+  padding: 0 8rem;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  height: 15%;
+}
+html main nav .logo h3,
+body main nav .logo h3 {
+  cursor: pointer;
+  opacity: 0.8;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 550;
+  font-size: 3rem;
+}
+html main nav .links a,
+body main nav .links a {
+  color: rgba(0, 0, 0, 0.719);
+  margin: 0 1rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+html main nav .icons,
+body main nav .icons {
+  cursor: pointer;
+  opacity: 0.88;
+  font-weight: 400;
+  font-size: 2.3rem;
+}
+html main .hero,
+body main .hero {
+  height: 70%;
+  padding: 0 4.5rem;
+  display: flex;
+  width: 100%;
+}
+html main .hero .left-text,
+body main .hero .left-text {
+  height: 100%;
+  padding: 1rem 3rem;
+  width: 40%;
+}
+html main .hero .left-text h5,
+body main .hero .left-text h5 {
+  font-weight: 600;
+  opacity: 0.88;
+  font-size: 18px;
+}
+html main .hero .left-text h1,
+body main .hero .left-text h1 {
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 400;
+  font-size: 6rem;
+  opacity: 0.82;
+  line-height: 70px;
+}
+html main .hero .left-text hr,
+body main .hero .left-text hr {
+  color: black;
+  margin: 1rem 0;
+  width: 5rem;
+}
+html main .hero .left-text p,
+body main .hero .left-text p {
+  opacity: 0.9;
+  width: 70%;
+  letter-spacing: 0.5px;
+  font-size: 17px;
+}
+html main .hero .left-text .colors,
+body main .hero .left-text .colors {
+  opacity: 0.95;
+}
+html main .hero .left-text .colors p,
+body main .hero .left-text .colors p {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 1rem 0;
+}
+html main .hero .left-text .details,
+body main .hero .left-text .details {
+  margin-top: 1rem;
+}
+html main .hero .left-text .details h3,
+body main .hero .left-text .details h3 {
+  margin: 1rem 0;
+  font-weight: 600;
+  opacity: 0.98;
+  font-size: 21px;
+}
+html main .hero .right-imgs,
+body main .hero .right-imgs {
+  height: 100%;
+  padding: 1rem 3rem;
+  width: 60%;
+  display: flex;
+}
+html main .hero .right-imgs .vertical-text p,
+body main .hero .right-imgs .vertical-text p {
+  width: 100%;
+  text-align: end;
+  rotate: 180deg;
+  writing-mode: vertical-lr;
+}
+html main .hero .right-imgs .hero-img,
+body main .hero .right-imgs .hero-img {
+  background-color: red;
+  border-radius: 15px;
+  height: 98%;
+  width: 60%;
+  background-position: center;
+  background-size: cover;
+  background-image: url(./assets/hero-girl.avif);
+}
+html main .hero .right-imgs .hero-img .top,
+body main .hero .right-imgs .hero-img .top {
+  padding: 1rem 2rem;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  height: 15%;
+  width: 100%;
+}
+html main .hero .right-imgs .hero-img .top .price p,
+html main .hero .right-imgs .hero-img .top .rating p,
+body main .hero .right-imgs .hero-img .top .price p,
+body main .hero .right-imgs .hero-img .top .rating p {
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.767);
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  font-size: 1rem;
+}
+html main .hero .right-imgs .mul-img,
+body main .hero .right-imgs .mul-img {
+  height: 100%;
+  background-color: red;
 }
