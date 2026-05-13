@@ -182,7 +182,6 @@ body main .hero .right-imgs .mul-img {
 html main .hero .right-imgs .mul-img .img,
 body main .hero .right-imgs .mul-img .img {
   border-radius: 15px;
-  background-color: rebeccapurple;
   height: 120px;
   width: 120px;
   overflow: hidden;
