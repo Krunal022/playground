@@ -1,17 +1,26 @@
-✨ Exploring the building blocks of the web with HTML
+✨ Exploring the building blocks of the web with HTML & CSS
 
 ## 📌 What I’ve Learned
-✔️ Basic Structure  
-✔️ Text & Formatting  
-✔️ Lists & Links  
-✔️ Media (Images, Audio, Video)  
-✔️ Tables  
-✔️ Forms 🆕  
-✔️ Semantic Tags  
 
-## 🔗 Live Demo
-| Demo             | Preview                                         |
-| ---------------- | ----------------------------------------------- |
-| 01 — HTML | [Live](https://html-01-chi.vercel.app/) 
+✔️ Basic Structure
+✔️ Text & Formatting
+✔️ Lists & Links
+✔️ Media (Images, Audio, Video)
+✔️ Tables
+✔️ Forms 🆕
+✔️ Semantic Tags
+✔️ CSS Flexbox
+✔️ Card Design & UI Practice
+✔️ Landing Page Structure
 
-⭐ Learning step by step & building consistency!
+## 🔗 Live Demo Projects
+
+| Project                           | Preview                                                                         |
+| --------------------------------- | ------------------------------------------------------------------------------- |
+| 01 — HTML Basics                  | [Live Demo](https://html-01-chi.vercel.app/?utm_source=chatgpt.com)             |
+| 02 — Microsoft Landing Page Clone | [Live Demo](https://a-microsoft-landingpage.vercel.app/?utm_source=chatgpt.com) |
+| 03 — Pikachu CSS Design           | [Live Demo](https://b-pikachu-design.vercel.app/?utm_source=chatgpt.com)        |
+| 04 — Pokémon Cards UI             | [Live Demo](https://c-pokemon-cards.vercel.app/?utm_source=chatgpt.com)         |
+| 05 — Product Layout Practice      | [Live Demo](https://d-product-layout.vercel.app/?utm_source=chatgpt.com)        |
+
+⭐ Learning step by step, practicing consistently, and improving every day through projects 🚀
