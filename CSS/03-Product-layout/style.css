@@ -10,6 +10,15 @@ body {
   height: 100%;
   width: 100%;
 }
+html ::-moz-selection, body ::-moz-selection {
+  background-color: black;
+  color: white;
+}
+html ::selection,
+body ::selection {
+  background-color: black;
+  color: white;
+}
 html main,
 body main {
   height: 100%;
@@ -114,8 +123,16 @@ body main .hero .right-imgs {
   width: 60%;
   display: flex;
 }
+html main .hero .right-imgs .vertical-text,
+body main .hero .right-imgs .vertical-text {
+  align-items: flex-end;
+  display: flex;
+}
 html main .hero .right-imgs .vertical-text p,
 body main .hero .right-imgs .vertical-text p {
+  opacity: 0.8;
+  padding: 1rem;
+  font-size: 1.5rem;
   width: 100%;
   text-align: end;
   rotate: 180deg;
@@ -153,5 +170,34 @@ body main .hero .right-imgs .hero-img .top .rating p {
 html main .hero .right-imgs .mul-img,
 body main .hero .right-imgs .mul-img {
   height: 100%;
-  background-color: red;
+  margin: 0 1rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  display: flex;
+  gap: 0.5rem;
+  width: 25%;
+}
+html main .hero .right-imgs .mul-img .img,
+body main .hero .right-imgs .mul-img .img {
+  border-radius: 15px;
+  background-color: rebeccapurple;
+  height: 120px;
+  width: 120px;
+  overflow: hidden;
+  cursor: pointer;
+}
+html main .hero .right-imgs .mul-img .img img,
+body main .hero .right-imgs .mul-img .img img {
+  width: 100%;
+  height: 100%;
+  -o-object-position: center;
+     object-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+html main .hero .right-imgs .mul-img .img1,
+body main .hero .right-imgs .mul-img .img1 {
+  border: 4px solid gray;
 }
