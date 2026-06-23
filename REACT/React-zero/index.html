@@ -4,12 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>React Rendering via ReactDOM | CDN</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <!-- This is for real DOM manipulation! -->
     <main></main>
+
+    <!-- This is for React DOM manipulation! -->
+    <div id="root"></div>
+
+    <!-- React and ReactDOM libraries CDN. 
+      These scripts allow you to use React's features and render React components in the browser. -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <script src="script.js"></script>
 </body>
+
 </html>
