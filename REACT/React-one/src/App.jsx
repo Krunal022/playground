@@ -3,6 +3,7 @@ import React from "react";
 import About from "./About";
 import Footer from "./Footer";
 import Rendering from "./Rendering";
+import Events from "./Events";
 
 const App = () => {
   return (
@@ -15,6 +16,9 @@ const App = () => {
 
       <h3>Rendering.. 2️⃣</h3>
       <Rendering />
+
+      <h3>Event Handling.. 3️⃣</h3>
+      <Events />
     </div>
   );
 };

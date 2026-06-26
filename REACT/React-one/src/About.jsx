@@ -1,7 +1,6 @@
 import React from "react";
 
 const About = (props) => {
-  console.log(props);
   return (
     <div id="about">
       <h2>About Page 🧿</h2>
