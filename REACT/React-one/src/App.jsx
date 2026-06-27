@@ -1,9 +1,9 @@
 import React from "react";
 // importing About,Footer component
-import About from "./About";
-import Footer from "./Footer";
-import Rendering from "./Rendering";
-import Events from "./Events";
+import About from "./components/About";
+import Footer from "./components/Footer";
+import Rendering from "./components/Rendering";
+import Events from "./components/Events";
 
 const App = () => {
   return (
