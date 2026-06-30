@@ -4,6 +4,7 @@ import About from "./components/About";
 import Footer from "./components/Footer";
 import Rendering from "./components/Rendering";
 import Events from "./components/Events";
+import TwoWay from "./components/TwoWay";
 
 const App = () => {
   return (
@@ -19,6 +20,9 @@ const App = () => {
 
       <h3>Event Handling.. 3️⃣</h3>
       <Events />
+
+      <h3>Two way binding.. 4️⃣</h3>
+      <TwoWay />
     </div>
   );
 };

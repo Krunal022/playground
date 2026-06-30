@@ -55,6 +55,16 @@ button {
   padding: .4rem .5rem;
 }
 
-button:active{
+button:active {
   scale: .98;
+}
+
+input {
+  background-color: rgba(243, 235, 235, 0.933);
+  color: black;
+  border-radius: 18px;
+  outline: none;
+  font-size: 1.2rem;
+  padding: .5rem .8rem;
+  margin: .1rem;
 }
