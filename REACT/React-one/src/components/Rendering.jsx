@@ -4,7 +4,7 @@ const Rendering = () => {
   let profiles = [
     { name: "Krunal", age: 55, city: "baroda" },
     { name: "Sagar", age: 41, city: "Surat" },
-    { name: "Vishal", age: 56, city: "Ahmdabad" },
+    { name: "Vishal", age: 56, city: "Ahmdabad" },  
     { name: "Divyang", age: 35, city: "Anand" },
   ];
 

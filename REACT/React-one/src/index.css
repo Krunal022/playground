@@ -68,3 +68,82 @@ input {
   padding: .5rem .8rem;
   margin: .1rem;
 }
+
+.container {
+  width: 100%;
+  /* background-color: green; */
+  height: 100%;
+  gap: .5rem;
+  flex-wrap: wrap;
+  display: flex;
+}
+
+.card {
+  border: 2px solid black;
+  border-radius: 20px;
+  /* height: 0%; */
+  width: 18%;
+  padding: 0;
+  gap: 1rem;
+  justify-content: center;
+  flex-direction: column;
+  display: flex;
+  /* background-color: red; */
+  overflow: hidden;
+  box-shadow: 5px 1px 30px rgba(0, 0, 0, 0.401);
+}
+
+.card .img {
+  border: 1px solid white;
+  border-radius: 20px;
+  margin: 5px;
+  padding: 0;
+  width: 96%;
+  /* background-color: red; */
+  height: 250px;
+  overflow: hidden;
+  /* background-color: green; */
+}
+
+.card .img img {
+  height: 100%;
+  width: 100%;
+  object-position: center;
+  object-fit: contain;
+}
+
+.card-text {
+  padding: 1rem;
+  /* background-color: red; */
+}
+
+.card-text h3 {
+  /* font-weight: 500; */
+  color: rgba(0, 0, 0, 0.943);
+  font-size: 1.2rem;
+}
+
+.card-text p {
+  opacity: .75;
+  font-size: .88rem;
+}
+
+.lower {
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  padding: .5rem 1rem;
+  /* background-color: red;; */
+}
+
+.lower h4 {
+  opacity: .88;
+  border-radius: 15px;
+  padding: .5rem .8rem;
+  background-color: rgba(128, 128, 128, 0.528);
+}
+
+.lower button {
+  padding: .5rem .8rem;
+  background-color: rgba(255, 0, 0, 0.803);
+}
