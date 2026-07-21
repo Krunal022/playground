@@ -9,7 +9,7 @@ const Cart = ({ cartItem }) => {
         return <CartCard product={elem} key={elem.id} />;
       })}
     </div>
-  );
+  ); 
 };
 
 export default Cart;
