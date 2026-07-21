@@ -5,6 +5,7 @@ import Products from "../pages/Products";
 import React from "react";
 import { Route, Routes } from "react-router";
 import NestedAbout from "../pages/NestedAbout";
+import ProductDetail from "../pages/ProductDetail";
 
 const AppRoutes = () => {
   return (
@@ -16,6 +17,7 @@ const AppRoutes = () => {
         </Route>
         <Route path="/contact" element={<Contact />} />
         <Route path="/products" element={<Products />} />
+        <Route path="/detail/:id" element={<ProductDetail />} />
       </Routes>
     </div>
   );

@@ -1,6 +1,9 @@
 import { Star } from "lucide-react";
+import { useNavigate } from "react-router";
 
 const ProductCard = ({ product }) => {
+  const navigate = useNavigate();
+
   return (
     <div className="w-90 bg-white rounded-3xl p-4 shadow-xl hover:scale-99 transition-all duration-300">
       {/* Image */}
@@ -18,7 +21,14 @@ const ProductCard = ({ product }) => {
 
       {/* Content */}
       <div className="mt-4">
-        <h2 className="text-xl font-bold line-clamp-1">{product.title}</h2>
+        <h2
+          onClick={() => {
+            navigate(`/detail/${product.id}`);
+          }}
+          className="text-xl font-bold line-clamp-1 hover:underline cursor-pointer"
+        >
+          {product.title}
+        </h2>
 
         <p className="text-sm text-gray-500 capitalize mt-1">
           {product.category}
