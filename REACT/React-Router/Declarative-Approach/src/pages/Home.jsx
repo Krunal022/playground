@@ -5,7 +5,7 @@ import ProductCard from "../components/ProductCard";
 
 const Home = () => {
   const { productsData, setProductsData } = useContext(MyStore);
-  console.log("Products->", productsData);
+  // console.log("Products->", productsData);
 
   const fetchProducts = async () => {
     try {

@@ -6,20 +6,72 @@ import { useNavigate, useParams } from "react-router";
 const ProductDetail = () => {
   const { id } = useParams();
   const [singleProduct, setSingleProduct] = useState({});
+  const [loading, setLoading] = useState(true);
+
   const navigate = useNavigate();
 
   const fetchSingleProduct = async () => {
     try {
+      setLoading(true);
+
       const res = await axios.get(`https://dummyjson.com/products/${id}`);
       setSingleProduct(res.data);
     } catch (error) {
       console.log("ProductDetail err: ", error);
+    } finally {
+      setLoading(false);
     }
   };
 
   useEffect(() => {
     fetchSingleProduct();
   }, []);
+
+  if (loading) {
+    return (
+      <div className="min-h-90 rounded-2xl py-10 px-5 animate-pulse">
+        <div className="max-w-6xl mx-auto flex justify-end p-2">
+          <div className="h-8 w-8 rounded-full bg-gray-100"></div>
+        </div>
+
+        <div className="max-w-6xl mx-auto bg-gray-100 rounded-3xl shadow-lg overflow-hidden grid md:grid-cols-2 gap-10 p-8">
+          {/* Image Skeleton */}
+          <div className="flex justify-center items-center">
+            <div className="w-full max-w-md h-112.5 rounded-xl bg-gray-300"></div>
+          </div>
+
+          {/* Details Skeleton */}
+          <div className="space-y-5">
+            <div className="h-6 w-24 rounded-full bg-gray-300"></div>
+
+            <div className="h-10 w-3/4 rounded bg-gray-300"></div>
+
+            <div className="h-5 w-40 rounded bg-gray-300"></div>
+
+            <div className="space-y-2">
+              <div className="h-4 w-full rounded bg-gray-300"></div>
+              <div className="h-4 w-5/6 rounded bg-gray-300"></div>
+              <div className="h-4 w-2/3 rounded bg-gray-300"></div>
+            </div>
+
+            <div className="flex gap-6">
+              <div className="h-5 w-20 rounded bg-gray-300"></div>
+              <div className="h-5 w-24 rounded bg-gray-300"></div>
+            </div>
+
+            <div className="flex gap-4 items-center">
+              <div className="h-10 w-28 rounded bg-gray-300"></div>
+              <div className="h-8 w-24 rounded-full bg-gray-300"></div>
+            </div>
+
+            <div className="h-5 w-40 rounded bg-gray-300"></div>
+
+            <div className="h-12 w-40 rounded-xl bg-gray-300"></div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-90 rounded-2xl text-black py-10 px-5">
@@ -29,6 +81,7 @@ const ProductDetail = () => {
       >
         <UndoDot />
       </h1>
+
       <div className="max-w-6xl mx-auto bg-gray-100 rounded-3xl shadow-lg overflow-hidden grid md:grid-cols-2 gap-10 p-8">
         {/* Image */}
         <div className="flex justify-center items-center">
