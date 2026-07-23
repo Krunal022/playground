@@ -4,6 +4,7 @@ import Home from "../pages/Home";
 import About from "../pages/About";
 import Contact from "../pages/Contact";
 import MainLayout from "../layouts/MainLayout";
+import AuthLayout from "../layouts/AuthLayout";
 
 const AppRoutes = () => {
   let router = createBrowserRouter([
@@ -24,6 +25,10 @@ const AppRoutes = () => {
           element: <Contact />,
         },
       ],
+    },
+    {
+      path: "/auth",
+      element: <AuthLayout />,
     },
   ]);
 
