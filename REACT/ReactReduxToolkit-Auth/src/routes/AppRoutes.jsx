@@ -8,6 +8,9 @@ import MainLayout from "../layouts/MainLayout";
 import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
 import { addUser } from "../features/AuthSlice";
+import PublicProtected from "./protectedRoutes/PublicProtected";
+import PrivateProtected from "./protectedRoutes/PrivateProtected";
+import PageNotFound from "../pages/PageNotFound";
 
 const AppRoutes = () => {
   const dispatch = useDispatch();
@@ -30,27 +33,43 @@ const AppRoutes = () => {
   let router = createBrowserRouter([
     {
       path: "/",
-      element: <AuthLayout />,
+      element: <PublicProtected />,
       children: [
         {
           path: "",
-          element: <Login />,
-        },
-        {
-          path: "/register",
-          element: <Register />,
+          element: <AuthLayout />,
+          children: [
+            {
+              path: "/",
+              element: <Login />,
+            },
+            {
+              path: "/register",
+              element: <Register />,
+            },
+          ],
         },
       ],
     },
     {
       path: "/main",
-      element: <MainLayout />,
+      element: <PrivateProtected />,
       children: [
         {
           path: "",
-          element: <Home />,
+          element: <MainLayout />,
+          children: [
+            {
+              path: "",
+              element: <Home />,
+            },
+          ],
         },
       ],
+    },
+    {
+      path: "*",
+      element: <PageNotFound />,
     },
   ]);
 
