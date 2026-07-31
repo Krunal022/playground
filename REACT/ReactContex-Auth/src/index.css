@@ -1,1 +1,10 @@
 @import "tailwindcss";
+
+@font-face {
+    font-family: hero;
+    src: url(../public/BwGradualDEMO-Regular.ttf);
+}
+
+body{
+    font-family: hero;
+}
