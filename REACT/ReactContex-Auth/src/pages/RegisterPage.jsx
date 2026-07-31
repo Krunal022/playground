@@ -1,12 +1,16 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Eye, EyeOff } from "lucide-react";
 import { useNavigate } from "react-router";
 import { useForm } from "react-hook-form";
+import { Auth } from "../context/AuthContext";
+import toast from "react-hot-toast";
 
 const RegisterPage = () => {
   const [showPassword, setShowPassword] = useState(false);
 
   const navigate = useNavigate();
+
+  const { registeredUsers, setRegisteredUsers } = useContext(Auth);
 
   const {
     register,
@@ -16,7 +20,11 @@ const RegisterPage = () => {
   } = useForm();
 
   const formHandler = (data) => {
-    console.log("Register DAta:", data);
+    const arr = [...registeredUsers, data];
+    setRegisteredUsers(arr);
+    localStorage.setItem("registeredUsers", JSON.stringify(arr));
+    toast.success("Registered Successfully!");
+    navigate("/");
     reset();
   };
 

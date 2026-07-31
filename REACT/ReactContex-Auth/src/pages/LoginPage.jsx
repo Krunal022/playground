@@ -1,11 +1,15 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Eye, EyeOff } from "lucide-react";
 import { useNavigate } from "react-router";
-import { useForm } from "react-hook-form";
+import { set, useForm } from "react-hook-form";
+import { Auth } from "../context/AuthContext";
+import toast from "react-hot-toast";
 
 const LoginPage = () => {
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
+
+  const { registeredUsers, setLoggedInUser } = useContext(Auth);
 
   const {
     register,
@@ -15,8 +19,22 @@ const LoginPage = () => {
   } = useForm();
 
   const formHandler = (data) => {
-    console.log("Login DAta:", data);
-    reset()
+    let user = registeredUsers.find((val) => {
+      return val.email === data.email && val.password === data.password;
+    });
+
+    if (!user) {
+      toast.error("Invalid Credentials!");
+      reset();
+      return;
+    }
+
+    setLoggedInUser(user);
+    localStorage.setItem("loggedInUser", JSON.stringify(user));
+
+    toast.success("LoggedIn Successfully!");
+    navigate("/main");
+    reset();
   };
 
   return (
