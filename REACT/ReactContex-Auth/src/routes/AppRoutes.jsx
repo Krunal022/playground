@@ -6,8 +6,11 @@ import RegisterPage from "../pages/RegisterPage";
 import MainLayout from "../layouts/MainLayout";
 import HomePage from "../pages/HomePage";
 import ProtectedRoute from "./ProtectedRoute";
-import { Home } from "lucide-react";
 import PublicRoute from "./PublicRoute";
+import ContactPage from "../pages/ContactPage";
+import AboutPage from "../pages/AboutPage";
+import ProductsPage from "../pages/ProductsPage";
+import UsersPage from "../pages/UsersPage";
 
 const AppRoutes = () => {
   let router = createBrowserRouter([
@@ -41,7 +44,23 @@ const AppRoutes = () => {
           children: [
             {
               path: "",
-              element: <Home />,
+              element: <HomePage />,
+            },
+            {
+              path: "contact",
+              element: <ContactPage />,
+            },
+            {
+              path: "about",
+              element: <AboutPage />,
+            },
+            {
+              path: "products",
+              element: <ProductsPage />,
+            },
+            {
+              path: "users",
+              element: <UsersPage />,
             },
           ],
         },

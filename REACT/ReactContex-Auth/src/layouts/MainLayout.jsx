@@ -4,10 +4,12 @@ import Navbar from "../components/Navbar";
 
 const MainLayout = () => {
   return (
-    <>
+    <div className="grid grid-cols-[1fr_9fr]">
       <Navbar />
-      <Outlet />
-    </>
+      <div className="p-4">
+        <Outlet />
+      </div>
+    </div>
   );
 };
 
