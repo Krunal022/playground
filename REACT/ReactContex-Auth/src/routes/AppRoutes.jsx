@@ -5,30 +5,45 @@ import AuthLayout from "../layouts/AuthLayout";
 import RegisterPage from "../pages/RegisterPage";
 import MainLayout from "../layouts/MainLayout";
 import HomePage from "../pages/HomePage";
+import ProtectedRoute from "./ProtectedRoute";
+import { Home } from "lucide-react";
+import PublicRoute from "./PublicRoute";
 
 const AppRoutes = () => {
   let router = createBrowserRouter([
     {
       path: "/",
-      element: <AuthLayout />,
+      element: <PublicRoute />,
       children: [
         {
-          path: "",
-          element: <LoginPage />,
-        },
-        {
-          path: "register",
-          element: <RegisterPage />,
+          path: "/",
+          element: <AuthLayout />,
+          children: [
+            {
+              path: "",
+              element: <LoginPage />,
+            },
+            {
+              path: "register",
+              element: <RegisterPage />,
+            },
+          ],
         },
       ],
     },
     {
       path: "main",
-      element: <MainLayout />,
+      element: <ProtectedRoute />,
       children: [
         {
           path: "",
-          element: <HomePage />,
+          element: <MainLayout />,
+          children: [
+            {
+              path: "",
+              element: <Home />,
+            },
+          ],
         },
       ],
     },
