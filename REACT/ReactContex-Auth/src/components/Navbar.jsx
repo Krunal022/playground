@@ -12,7 +12,7 @@ const navItems = [
 
 const Navbar = () => {
   return (
-    <aside className="h-screen w-72 bg-white/90 backdrop-blur-xl border-r border-purple-100 shadow-[0_10px_40px_rgba(168,85,247,0.12)] p-5 flex flex-col">
+    <aside className=" sticky top-0 h-screen w-72 bg-white/90 backdrop-blur-xl border-r border-purple-100 shadow-[0_10px_40px_rgba(168,85,247,0.12)] p-5 flex flex-col">
       {/* Logo */}
       <div className="flex items-center gap-3 mb-8">
         <div className="w-11 h-11 rounded-2xl bg-linear-to-br from-purple-500 to-violet-400 flex items-center justify-center shadow-lg shadow-purple-200">
@@ -68,15 +68,12 @@ const Navbar = () => {
       {/* Bottom Card */}
       <div className="mt-auto pt-6">
         <div className="rounded-3xl bg-linear-to-br from-purple-50 to-violet-100 p-4 border border-purple-100 shadow-inner">
-          <p className="text-sm font-semibold text-purple-900">
-            Modern Sidebar
-          </p>
           <p className="text-xs text-purple-700 mt-1 leading-relaxed">
-            Soft purple navigation inspired by the provided UI design.
+            Your session will end after logging out.{" "}
           </p>
 
-          <button className="mt-4 w-full rounded-xl bg-white text-purple-700 text-sm font-medium py-2.5 hover:bg-purple-600 hover:text-white transition-all duration-300 shadow-sm">
-            Explore
+          <button className="mt-4 w-full rounded-xl bg-white text-purple-600 text-sm font-medium py-2.5 hover:bg-red-500 hover:text-white transition-all duration-300 shadow-sm cursor-pointer">
+            Logout
           </button>
         </div>
       </div>
