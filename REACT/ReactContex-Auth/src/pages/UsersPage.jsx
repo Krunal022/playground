@@ -1,7 +1,7 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
 import UserCard from "../components/UserCard";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+import { axiosInstance } from "../api/AxiosInstance";
 
 const UsersPage = () => {
   const [usersData, setUsersData] = useState([]);
@@ -10,7 +10,7 @@ const UsersPage = () => {
 
   const fetchUsers = async () => {
     try {
-      const res = await axios.get("https://fakestoreapi.com/users");
+      const res = await axiosInstance.get("/users");
       setUsersData(res.data);
       setIsLoading(false);
     } catch (error) {
