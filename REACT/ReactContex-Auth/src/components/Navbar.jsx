@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
 import { NavLink } from "react-router";
 import { Home, Users, ShoppingBag, Info, Mail } from "lucide-react";
+import { Auth } from "../context/AuthContext";
+import toast from "react-hot-toast";
 
 const navItems = [
   { name: "Home", path: "/", icon: Home },
@@ -11,6 +13,8 @@ const navItems = [
 ];
 
 const Navbar = () => {
+  const { loggedInUser, setLoggedInUser } = useContext(Auth);
+
   return (
     <aside className=" sticky top-0 h-screen w-72 bg-white/90 backdrop-blur-xl border-r border-purple-100 shadow-[0_10px_40px_rgba(168,85,247,0.12)] p-5 flex flex-col">
       {/* Logo */}
@@ -72,7 +76,14 @@ const Navbar = () => {
             Your session will end after logging out.{" "}
           </p>
 
-          <button className="mt-4 w-full rounded-xl bg-white text-purple-600 text-sm font-medium py-2.5 hover:bg-red-500 hover:text-white transition-all duration-300 shadow-sm cursor-pointer">
+          <button
+            onClick={() => {
+              localStorage.removeItem("loggedInUser");
+              setLoggedInUser(null);
+              toast.success("LoggedOut Successfully!");
+            }}
+            className="mt-4 w-full rounded-xl bg-white text-purple-600 text-sm font-medium py-2.5 hover:bg-red-500 hover:text-white transition-all duration-300 shadow-sm cursor-pointer"
+          >
             Logout
           </button>
         </div>

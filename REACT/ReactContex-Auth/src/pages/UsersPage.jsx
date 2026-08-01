@@ -1,14 +1,18 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import UserCard from "../components/UserCard";
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 const UsersPage = () => {
   const [usersData, setUsersData] = useState([]);
+
+  const [isLoading, setIsLoading] = useState(true);
 
   const fetchUsers = async () => {
     try {
       const res = await axios.get("https://fakestoreapi.com/users");
       setUsersData(res.data);
+      setIsLoading(false);
     } catch (error) {
       console.log("err in User API - ", error);
     }
@@ -17,6 +21,16 @@ const UsersPage = () => {
   useEffect(() => {
     fetchUsers();
   }, []);
+
+  if (isLoading) {
+    return (
+      <DotLottieReact
+        src="https://lottie.host/a8ee67bb-2630-4987-b662-b0f9333c0fb8/ZXMo77axXK.json"
+        loop
+        autoplay
+      />
+    );
+  }
 
   return (
     <div>
