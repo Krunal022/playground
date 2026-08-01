@@ -1,41 +1,17 @@
-import React, { useContext, useState } from "react";
+import React from "react";
 import { Eye, EyeOff } from "lucide-react";
-import { useNavigate } from "react-router";
-import { set, useForm } from "react-hook-form";
-import { Auth } from "../context/AuthContext";
-import toast from "react-hot-toast";
+import { useAuth } from "../hooks/authHook";
 
 const LoginPage = () => {
-  const [showPassword, setShowPassword] = useState(false);
-  const navigate = useNavigate();
-
-  const { registeredUsers, setLoggedInUser } = useContext(Auth);
-
   const {
+    navigate,
+    LoginFormHandler,
     register,
     handleSubmit,
-    reset,
-    formState: { errors },
-  } = useForm();
-
-  const formHandler = (data) => {
-    let user = registeredUsers.find((val) => {
-      return val.email === data.email && val.password === data.password;
-    });
-
-    if (!user) {
-      toast.error("Invalid Credentials!");
-      reset();
-      return;
-    }
-
-    setLoggedInUser(user);
-    localStorage.setItem("loggedInUser", JSON.stringify(user));
-
-    toast.success("LoggedIn Successfully!");
-    navigate("/main");
-    reset();
-  };
+    errors,
+    showPassword,
+    setShowPassword,
+  } = useAuth();
 
   return (
     <div className="min-h-screen bg-[#6b647d] flex items-center justify-center p-4 sm:p-6">
@@ -103,7 +79,10 @@ const LoginPage = () => {
               </a>
             </p>
 
-            <form onSubmit={handleSubmit(formHandler)} className="space-y-5">
+            <form
+              onSubmit={handleSubmit(LoginFormHandler)}
+              className="space-y-5"
+            >
               {/* Email */}
               <div>
                 <input

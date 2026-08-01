@@ -1,32 +1,17 @@
-import React, { useContext, useState } from "react";
+import React from "react";
 import { Eye, EyeOff } from "lucide-react";
-import { useNavigate } from "react-router";
-import { useForm } from "react-hook-form";
-import { Auth } from "../context/AuthContext";
-import toast from "react-hot-toast";
+import { useAuth } from "../hooks/authHook";
 
 const RegisterPage = () => {
-  const [showPassword, setShowPassword] = useState(false);
-
-  const navigate = useNavigate();
-
-  const { registeredUsers, setRegisteredUsers } = useContext(Auth);
-
   const {
+    navigate,
+    RegisterFormHandler,
     register,
     handleSubmit,
-    reset,
-    formState: { errors },
-  } = useForm();
-
-  const formHandler = (data) => {
-    const arr = [...registeredUsers, data];
-    setRegisteredUsers(arr);
-    localStorage.setItem("registeredUsers", JSON.stringify(arr));
-    toast.success("Registered Successfully!");
-    navigate("/");
-    reset();
-  };
+    errors,
+    showPassword,
+    setShowPassword,
+  } = useAuth();
 
   return (
     <div className="min-h-screen bg-[#6b647d] flex items-center justify-center p-4 sm:p-6">
@@ -94,7 +79,10 @@ const RegisterPage = () => {
               </a>
             </p>
 
-            <form onSubmit={handleSubmit(formHandler)} className="space-y-5">
+            <form
+              onSubmit={handleSubmit(RegisterFormHandler)}
+              className="space-y-5"
+            >
               {/* Username */}
               <div>
                 <input
