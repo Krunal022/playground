@@ -11,6 +11,7 @@ import { addUser } from "../features/AuthSlice";
 import PublicProtected from "./protectedRoutes/PublicProtected";
 import PrivateProtected from "./protectedRoutes/PrivateProtected";
 import PageNotFound from "../pages/PageNotFound";
+import ProductsPage from "../pages/ProductsPage";
 
 const AppRoutes = () => {
   const dispatch = useDispatch();
@@ -19,7 +20,6 @@ const AppRoutes = () => {
     const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
 
     if (!loggedInUser) {
-      toast.error("Login again!");
       return <Navigate to={"/"} />;
     }
 
@@ -62,6 +62,10 @@ const AppRoutes = () => {
             {
               path: "",
               element: <Home />,
+            },
+            {
+              path: "products",
+              element: <ProductsPage/>,
             },
           ],
         },

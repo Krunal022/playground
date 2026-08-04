@@ -1,10 +1,12 @@
 @import "tailwindcss";
 
 @font-face {
-    font-family: hero;
-    src: url(./BwGradualDEMO-Regular.ttf);
+    font-family: 'BwGradual';
+    src: url('./assets/fonts/BwGradualDEMO-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 
-body{
-    font-family: hero;
+body {
+    font-family: 'BwGradual', sans-serif;
 }
