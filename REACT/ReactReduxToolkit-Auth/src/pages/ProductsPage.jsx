@@ -2,23 +2,20 @@ import React, { useEffect, useState } from "react";
 import ProductCard from "../components/ProductCard";
 import { axiosInstance } from "../config/axiosInstance";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+import { getProductsData } from "../api/ProductAPI";
 
 const ProductsPage = () => {
   const [productData, setProductData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  const getProductsData = async () => {
-    try {
-      const res = await axiosInstance.get("products?limit=100");
-      setProductData(res.data.products);
-      setIsLoading(false);
-    } catch (error) {
-      console.log("Err in FetchingProduct API:", error);
-    }
+  const gettingData = async () => {
+    const res = await getProductsData();
+    setProductData(res);
+    setIsLoading(false);
   };
 
   useEffect(() => {
-    getProductsData();
+    gettingData();
   }, []);
 
   if (isLoading) {

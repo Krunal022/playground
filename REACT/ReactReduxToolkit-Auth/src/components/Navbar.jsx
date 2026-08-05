@@ -1,7 +1,19 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router";
+import { removeUser } from "../features/AuthSlice";
+import { toast } from "react-toastify";
 
 const Navbar = () => {
+  const { user } = useSelector((store) => store.auth);
+  const dispatch = useDispatch();
+
+  const logOutUser = () => {
+    dispatch(removeUser());
+    localStorage.removeItem("loggedInUser");
+    toast.success("LoggedOut Successfully!");
+  };
+
   return (
     <div className="w-full bg-black/80 px-4 py-4">
       <div className="mx-auto max-w-5xl bg-white rounded-full p-2 shadow-lg">
@@ -67,7 +79,10 @@ const Navbar = () => {
           </NavLink>
 
           {/* Logout Button */}
-          <button className="px-4 py-3 rounded-full bg-orange-500 text-white text-sm font-semibold hover:bg-orange-600 transition-all duration-300 whitespace-nowrap cursor-pointer">
+          <button
+            onClick={() => logOutUser()}
+            className="px-4 py-3 rounded-full bg-orange-500 text-white text-sm font-semibold hover:bg-orange-600 transition-all duration-300 whitespace-nowrap cursor-pointer"
+          >
             Logout
           </button>
         </div>
