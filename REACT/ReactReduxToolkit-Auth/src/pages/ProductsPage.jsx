@@ -1,22 +1,36 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
 import ProductCard from "../components/ProductCard";
+import { axiosInstance } from "../config/axiosInstance";
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 const ProductsPage = () => {
   const [productData, setProductData] = useState([]);
-  console.log(productData);
+  const [isLoading, setIsLoading] = useState(true);
 
   const getProductsData = async () => {
     try {
-      const res = await axios.get("https://dummyjson.com/products?limit=100");
+      const res = await axiosInstance.get("products?limit=100");
       setProductData(res.data.products);
+      setIsLoading(false);
     } catch (error) {
       console.log("Err in FetchingProduct API:", error);
     }
   };
+
   useEffect(() => {
     getProductsData();
   }, []);
+
+  if (isLoading) {
+    return (
+      <DotLottieReact
+        className="bg-black min-h-screen flex items-center justify-center"
+        src="https://lottie.host/461b93da-8154-4899-b0f9-32d7cb237790/ia3dSixZOj.lottie"
+        loop
+        autoplay
+      />
+    );
+  }
 
   return (
     <div className="min-h-screen bg-black p-4 sm:p-6 lg:p-8">
