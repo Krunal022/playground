@@ -1,24 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import ProductCard from "../components/ProductCard";
-import { axiosInstance } from "../config/axiosInstance";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import { getProductsData } from "../api/ProductAPI";
+import { useQuery } from "@tanstack/react-query";
 
 const ProductsPage = () => {
-  const [productData, setProductData] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const { data, isPending } = useQuery({
+    queryKey: ["products"],
+    queryFn: getProductsData,
+    staleTime: 20000,
+  });
 
-  const gettingData = async () => {
-    const res = await getProductsData();
-    setProductData(res);
-    setIsLoading(false);
-  };
-
-  useEffect(() => {
-    gettingData();
-  }, []);
-
-  if (isLoading) {
+  if (isPending) {
     return (
       <DotLottieReact
         className="bg-black min-h-screen flex items-center justify-center"
@@ -32,7 +25,7 @@ const ProductsPage = () => {
   return (
     <div className="min-h-screen bg-black p-4 sm:p-6 lg:p-8">
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-        {productData.map((product) => (
+        {data.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}
       </div>
