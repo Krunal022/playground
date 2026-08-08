@@ -1,7 +1,9 @@
 import React from "react";
 import { NavLink } from "react-router";
+import { useAuth } from "../../../features/auth/hooks/useAuthHook";
 
 const Navbar = () => {
+  const { logOutHandler } = useAuth();
   return (
     <div className="w-full bg-black/80 px-4 py-4">
       <div className="mx-auto max-w-5xl bg-white rounded-full p-2 shadow-lg">
@@ -68,7 +70,7 @@ const Navbar = () => {
 
           {/* Logout Button */}
           <button
-            onClick={() => logOutUser()}
+            onClick={() => logOutHandler()}
             className="px-4 py-3 rounded-full bg-orange-500 text-white text-sm font-semibold hover:bg-orange-600 transition-all duration-300 whitespace-nowrap cursor-pointer"
           >
             Logout
