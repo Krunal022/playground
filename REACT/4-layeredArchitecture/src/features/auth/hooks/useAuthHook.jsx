@@ -6,6 +6,7 @@ import { loginUserAPI } from "../api/AuthApi";
 import { useDispatch } from "react-redux";
 import { addUser, removeUser } from "../state/authSlice";
 import toast from "react-hot-toast";
+import { LoginUserAction } from "../state/authAction";
 
 export const useAuth = () => {
   const navigate = useNavigate();
@@ -27,13 +28,11 @@ export const useAuth = () => {
     console.log("RegisterData", data);
   };
 
+  // Dispatch loginAction and let Redux Thunk handle the API flow and state updates.
   const LoginHandler = async (data) => {
     try {
-      const response = await loginUserAPI(data);
+      const response = await dispatch(LoginUserAction(data));
       console.log(response);
-      localStorage.setItem("accessToken", response.accessToken);
-      dispatch(addUser(response));
-      toast.success("loggedInSuccessfully!");
     } catch (error) {
       console.log("error in LoginFormHandler:", error);
     }

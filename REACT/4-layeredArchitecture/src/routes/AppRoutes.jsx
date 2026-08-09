@@ -13,20 +13,13 @@ import OrderPage from "../features/orders/ui/pages/OrderPage";
 import { HydrateUserAPI } from "../features/auth/api/AuthApi";
 import { useDispatch } from "react-redux";
 import { addUser } from "../features/auth/state/authSlice";
+import { HydrateUserAction } from "../features/auth/state/authAction";
 
 const AppRoutes = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    (async () => {
-      try {
-        const res = await HydrateUserAPI();
-        dispatch(addUser(res));
-        console.log(res);
-      } catch (error) {
-        console.log("errors in HydrateUser..", error);
-      }
-    })();
+    dispatch(HydrateUserAction());
   }, []);
 
   const router = createBrowserRouter([

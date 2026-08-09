@@ -6,7 +6,7 @@ const AuthLayout = () => {
   const { user, isLoading } = useSelector((store) => store.auth);
 
   if (isLoading) {
-    return <h1>Loading...</h1>;
+    return <h1>Loading main page...</h1>;
   }
 
   if (user) {
